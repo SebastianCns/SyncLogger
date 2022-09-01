@@ -4,4 +4,14 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Enums\" />
+    <None Remove="Storage Objects\" />
+    <None Remove="Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+    <Folder Include="Storage Objects\" />
+    <Folder Include="Classes\" />
+  </ItemGroup>
 </Project>
