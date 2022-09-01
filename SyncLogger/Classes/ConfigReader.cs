@@ -7,8 +7,9 @@ namespace SyncLogger.Classes
 {
     public static class ConfigReader
     {
-        public static void GetXmlConfig(ConfigObj config)                       //Read the config file add write the information into the associated objects
+        public static bool GetXmlConfig(ConfigObj config)                       //Read the config file add write the information into the associated objects
         {
+            bool result = true;
             try
             {
                 using (var reader = XmlReader.Create("config.xml"))
@@ -48,8 +49,10 @@ namespace SyncLogger.Classes
             catch(System.IO.FileNotFoundException fex)
             {
                 ErrorMessenger.AddFileMessage("ConfigReader.cs", fex.Message);
+                result = false;
             }
-            
+
+            return result;
         }
     }
 }
